@@ -17,7 +17,8 @@ client.connect((err) => {
   }
   let query = process.argv[2];
   let counter = 0;
-  list = 1;
+  let list = 1;
+  
   client.query("SELECT * FROM famous_people WHERE famous_people.first_name = $1", [query], (err, result) => {
     if (err) {
       return console.error("error running query", err);
